@@ -12,9 +12,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="20200425.github.io/20200425/" />
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
-<link rel = "stylesheet"href = "source / swipebox.css">
-
+<script src="lib/jquery-2.1.0.min.js"></script>
+<script src="src/js/jquery.swipebox.js"></script>
+<link rel = "stylesheet" href = "src/css/swipebox.css">
 
 <style>
 * {
@@ -408,11 +408,11 @@ body {
 
     <!--main이미지는 고화질주소, 크롭주소 같은걸루 사이즈는 가로 640 세로는 상관없음-->
 	<div class="contact_wrap_Y">
-	 <a href="https://user-images.githubusercontent.com/57864823/69452375-db1b0480-0da4-11ea-99b5-666f823fd76d.png" class="swipebox" title="내 캡션" ><img src="https://user-images.githubusercontent.com/57864823/69452375-db1b0480-0da4-11ea-99b5-666f823fd76d.png"; class = "img100" /></a><a href="https://user-images.githubusercontent.com/57864823/69452134-58924500-0da4-11ea-8b3b-8e62f40c2d12.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69452822-f8040780-0da5-11ea-86ea-5df40c5f6247.png" ; class = "img32"/></a>&nbsp;<a href="https://user-images.githubusercontent.com/57864823/69451273-4dd6b080-0da2-11ea-9f09-a59fa52919cc.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69453313-056dc180-0da7-11ea-8979-9652d86630a4.png" ; class = "img32"/></a>
+	 <a href="https://user-images.githubusercontent.com/57864823/69483112-a1123700-0e66-11ea-8348-da813346dab6.jpg" class="swipebox" title="내 캡션" ><img src="https://user-images.githubusercontent.com/57864823/69452375-db1b0480-0da4-11ea-99b5-666f823fd76d.png"; class = "img100" /></a><a href="https://user-images.githubusercontent.com/57864823/69452134-58924500-0da4-11ea-8b3b-8e62f40c2d12.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69452822-f8040780-0da5-11ea-86ea-5df40c5f6247.png" ; class = "img32"/></a>&nbsp;<a href="https://user-images.githubusercontent.com/57864823/69451273-4dd6b080-0da2-11ea-9f09-a59fa52919cc.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69453313-056dc180-0da7-11ea-8979-9652d86630a4.png" ; class = "img32"/></a>
 	    <a href="https://user-images.githubusercontent.com/57864823/69453606-9c3a7e00-0da7-11ea-8d95-6801ddeb7e72.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69453607-9cd31480-0da7-11ea-884c-4dfe1ab303f8.png"; class = "img32" /></a></br>
 		<a href="https://user-images.githubusercontent.com/57864823/69472798-ed6f5f80-0df1-11ea-9826-6ff8bdfb9b39.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69472797-ed6f5f80-0df1-11ea-93f5-c25853edcea7.png"; class = "img32" /></a>
 		<a href="https://user-images.githubusercontent.com/57864823/69473548-121b0580-0df9-11ea-8b43-75fa9ee60e87.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69473549-121b0580-0df9-11ea-8056-0c231bb4f3c9.png"; class = "img32" /></a>
-		<a href="https://user-images.githubusercontent.com/57864823/69454000-88dbe280-0da8-11ea-8773-6cc3fc4eb9d9.png" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69454001-89747900-0da8-11ea-9c78-6b6400689d2c.png"; class = "img32" /></a>
+		<a href="https://user-images.githubusercontent.com/57864823/69483125-d159d580-0e66-11ea-940c-12e45b3b6b7d.jpg" class="swipebox"><img src="https://user-images.githubusercontent.com/57864823/69454001-89747900-0da8-11ea-9c78-6b6400689d2c.png"; class = "img32" /></a>
 	</div>
 	</div>
 	</div>
@@ -452,24 +452,25 @@ body {
 <img src="https://user-images.githubusercontent.com/57864823/69447990-fd0f8980-0d9a-11ea-82fb-57e6d0f10009.png" class = "img45"  style = "vertical-align: middle";/>
 <br/><h2>2시간 무료주차</h2>
 </div>
-<script src="lib/jquery-1.9.0.min.js"></script> 
-<script src="lib/ios-orientationchange-fix.js"></script> 
-<script src="source/jquery.swipebox.min.js"></script> 
+
 <script type="text/javascript">
-		jQuery(function($) {
-			$(".swipebox").swipebox();
-		});
-	</script><script type="text/javascript">
+	;( function( $ ) {
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_trackPageview']);
+	$( '.swipebox' ).swipebox( {
+		useCSS : true, <span>// false will force the use of jQuery for animations</span>
+		useSVG : true, <span>// false to force the use of png for buttons</span>
+		initialIndexOnArray : 0, <span>// which image index to init when a array is passed</span>
+		hideCloseButtonOnMobile : false, <span>// true will hide the close button on mobile devices</span>
+		removeBarsOnMobile : true, <span>// false will show top bar on mobile devices</span>
+		hideBarsDelay : 3000, <span>// delay before hiding bars on desktop</span>
+		videoMaxWidth : 1140, <span>// videos max width</span>
+		beforeOpen: function() {}, <span>// called before opening</span>
+		afterOpen: null, <span>// called after opening</span>
+		afterClose: function() {}, <span>// called after closing</span>
+		loopAtEnd: false <span>// true will return to the first image after the last image is reached</span>
+	} );
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+} )( jQuery );
+	</script>
 </body>
 </html>
